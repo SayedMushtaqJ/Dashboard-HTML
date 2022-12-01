@@ -1,0 +1,843 @@
+$blue :hsl(192deg 75% 53%);
+$purple : hsl(300deg 45% 53%);
+
+@mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin progressbar($color) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--bs-progress-bar-color);
+    text-align: center;
+    white-space: nowrap;
+    background-color: $color;
+    transition: var(--bs-progress-bar-transition);
+    // width: 200px;
+}
+
+@mixin progress($height) {
+
+    --bs-progress-font-size: 0.75rem;
+    --bs-progress-bg: #e9ecef;
+    --bs-progress-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    --bs-progress-bar-color: #fff;
+    --bs-progress-bar-bg: #0d6efd;
+    display: flex;
+    height: $height;
+    width: 500px;
+    overflow: hidden;
+    font-size: var(--bs-progress-font-size);
+    background-color: var(--bs-progress-bg);
+    border-radius: 3px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid rgb(221, 221, 221);
+
+    img {
+        width: 350px;
+    }
+
+    div {
+        @include flex(row);
+        float: right;
+
+        p {
+            font-size: 13px;
+            margin-bottom: 0px;
+            color: gray;
+            @include flexcenter();
+        }
+
+        img {
+            height: 45px;
+            width: auto;
+            border-radius: 50%;
+            margin-right: 20px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+    }
+}
+
+.input1 {
+    border-radius: 10px;
+    border: 1px solid rgb(235, 235, 235);
+    @include flexcenter();
+    padding: 6px;
+    float: right;
+    margin: 15px 20px 0px 0px;
+
+    &::placeholder {
+        font-size: 11px;
+    }
+}
+
+.onup {
+    @include flex(row);
+    height: 270px;
+    width: auto;
+
+    div {
+        border: 3px solid $blue;
+        margin: 70px 20px 0px 20px;
+        width: 400px;
+
+        div {
+            @include flex(row);
+            @include flexcenter();
+            margin-top: 10px;
+            border: none;
+
+            p {
+                color: $blue;
+                font-family: 'Alexandria', sans-serif;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+                margin-right: 20px;
+            }
+        }
+
+        p {
+            color: red;
+            font-family: 'Alexandria', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            margin-left: 10px;
+        }
+    }
+}
+
+.maincard {
+    @include flex(row);
+}
+
+.con {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    background-color: $blue;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 20px;
+    padding: 7px 1px;
+}
+
+.bacground {
+    background-color: hsl(230deg 38% 97%);
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    margin: 10px;
+    padding-bottom: 30px;
+    // border: transparent
+}
+
+.icon {
+    margin-left: 1000px
+}
+
+.goal {
+    @include flex(row);
+    margin-left: 20px;
+
+    button {
+        padding: 11px 25px;
+        color: white;
+        border-radius: 5px;
+        background-color: hsl(285deg 53% 36%);
+        font-size: 14px;
+        margin: 15px 2px;
+        border: none;
+    }
+
+    input {
+        margin-left: 830px;
+        margin-right: 10px;
+        height: 25px;
+        width: 180px;
+        padding: 6px;
+        border-radius: 10px;
+        border: 1px solid rgb(211, 211, 211);
+        background-color: rgb(238, 238, 238);
+        margin-top: 15px;
+        font-size: 13px;
+    }
+}
+
+.card1 {
+    margin: 0px 20px;
+    // border: 1px solid white;
+    border: none;
+    background-color: white
+}
+
+.goal1 {
+    @include flex(row);
+    margin-left: 20px;
+
+    button {
+        border: none;
+        background-color: transparent;
+        font-size: 13px;
+        color: gray;
+        padding: 8px 17px;
+        border-radius: 5px;
+    }
+}
+
+.mar3 {
+    font-weight: 600;
+    font-size: 18px;
+    background: transparent;
+    border: 1px solid white;
+    color: $purple;
+}
+
+.bar-content {
+    margin: 8px 30px;
+}
+
+.table1 {
+    @include flex(row);
+    background-color: hsl(0deg 0% 94%);
+    padding: 3px;
+    border-left: 2px solid $purple;
+    height: 35px;
+
+    a {
+        background-color: $purple;
+        text-decoration: none;
+        color: white;
+        font-size: 11px;
+        font-weight: 600;
+        height: 25px;
+        width: 150px;
+        height: 20px;
+        padding-top: 3px;
+        padding-left: 5px;
+        border-radius: 4px;
+        margin-right: 100px;
+        margin-top: 10px;
+    }
+
+    p {
+        color: gray;
+        font-size: 12px;
+        margin-right: 100px;
+        margin-top: 10px;
+    }
+
+    button {
+        background-color: red;
+        border: none;
+        height: 12px;
+        margin-right: 8px;
+        margin-top: 10px;
+    }
+
+    div {
+        width: 600px;
+    }
+}
+
+.table2 {
+    @include flex(row);
+    background-color: hsl(0deg 0% 94%);
+    padding: 3px;
+    border-left: 2px solid $blue;
+    height: 35px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+    a {
+        background-color: $blue;
+        text-decoration: none;
+        color: white;
+        font-size: 11px;
+        font-weight: 600;
+        height: 25px;
+        width: 150px;
+        height: 20px;
+        padding-top: 3px;
+        padding-left: 5px;
+        border-radius: 4px;
+        margin-right: 100px;
+        margin-top: 10px;
+    }
+
+    p {
+        color: gray;
+        font-size: 12px;
+        margin-right: 100px;
+        margin-top: 10px;
+    }
+
+    button {
+        background-color: red;
+        border: none;
+        height: 12px;
+        margin-right: 8px;
+        margin-top: 10px;
+    }
+
+    div {
+        width: 600px;
+    }
+}
+
+.date {
+    @include flex(row);
+    border: 1px solid white;
+    padding-left: 20px;
+
+    p {
+        float: right;
+        color: $purple;
+        margin-right: 4px;
+    }
+}
+
+.main_bar {
+    @include progress(11px);
+    margin-top: 10px;
+}
+
+.yellow {
+    @include progressbar(hsl(34deg 96% 63%));
+}
+
+.green {
+    @include progressbar(hsl(136deg 81% 22%));
+}
+
+.progress {
+    width: 220px;
+    height: 10px;
+    margin-right: 10px
+}
+
+.dat {
+    background-color: $purple;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px;
+}
+
+.bar {
+    @include flex(row);
+    margin-left: 40px;
+
+    p {
+        margin-right: 260px;
+        font-size: 13px;
+        color: gray;
+    }
+}
+
+.date1 {
+    @include flex(row);
+    border: 1px solid white;
+    padding-left: 20px;
+    margin-top: 40px;
+
+    p {
+        float: right;
+        color: $blue;
+        margin-right: 4px;
+    }
+}
+
+.dat1 {
+    background-color: $blue;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px;
+}
+
+.collapsible {
+    // background-color: #777;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1250px) {
+
+    .goal {
+        margin-left: 20px;
+
+        button {
+            border-radius: 5px;
+            padding: 8px 15px;
+            font-size: 13px;
+        }
+
+        input {
+            margin-left: 900px;
+            height: 23px;
+            width: 170px;
+            font-size: 13px;
+        }
+    }
+
+    .icon {
+        margin-left: 1050px
+    }
+
+    .mar3 {
+        font-weight: 600;
+        font-size: 14px
+    }
+
+    .date {
+        @include flex(row);
+        border: 1px solid white;
+        padding-left: 20px;
+
+        p {
+            float: right;
+            color: $purple;
+            margin-right: 4px;
+        }
+    }
+
+    .bar {
+        @include flex(row);
+        margin-left: 40px;
+
+        p {
+            margin-right: 390px;
+            font-size: 13px;
+            color: gray;
+        }
+    }
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    
+.onup {
+    @include flex(row);
+    height: 270px;
+    width: auto;
+
+    div {
+        border: 3px solid $blue;
+        margin: 80px 20px 0px 30px;
+        width: 400px;
+
+        div {
+            @include flex(row);
+            @include flexcenter();
+            margin-top: 10px;
+            border: none;
+
+            p {
+                color: $blue;
+                font-family: 'Alexandria', sans-serif;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                font-size: 19px;
+                margin-right: 20px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+    .topnav {
+        img {
+             width: 350px;
+         }
+     
+         div {
+             @include flex(row);
+             float: right;
+     
+             p {
+                 font-size: 20px;
+             }
+     
+             img {
+                 height: 45px;
+             }
+     
+         }
+     }
+    .bacground {
+        background-color: hsl(230deg 38% 97%);
+        border-radius: 10px;
+        height: auto;
+        width: 3000px;
+        margin: 10px;
+        padding-bottom: 30px;
+    }
+
+    .goal {
+        @include flex(row);
+        margin-left: 20px;
+
+        button {
+            border-radius: 1px;
+            padding: 7px 12px;
+            font-size: 16px;
+        }
+
+        input {
+            margin-left: 870px;
+            height: 23px;
+            width: 170px;
+            padding: 6px;
+            font-size: 18px;
+        }
+    }
+    .goal1 {
+        @include flex(row);
+        margin-left: 20px;
+    
+        button {
+            font-size: 17px;
+        }
+    }
+
+    .icon {
+        margin-left: 950px
+    }
+
+    .mar3 {
+        font-weight: 600;
+        font-size: 28px
+    }
+
+    .date {
+        @include flex(row);
+        border: 1px solid white;
+        padding-left: 20px;
+
+        p {
+            float: right;
+            color: $purple;
+            margin-right: 4px;
+        }
+    }
+
+    .bar {
+        @include flex(row);
+        margin-left: 40px;
+
+        p {
+            margin-right: 395px;
+            font-size: 15px;
+            color: gray;
+        }
+    }
+
+    .table1 {
+        div {
+            width: 570px;
+        }
+    }
+
+    .table2 {
+        div {
+            width: 570px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    
+.topnav {
+   img {
+        width: 350px;
+    }
+
+    div {
+        @include flex(row);
+        float: right;
+
+        p {
+            font-size: 20px;
+        }
+
+        img {
+            height: 45px;
+        }
+
+    }
+}
+.input1 {
+    border-radius: 10px;
+    border: 1px solid rgb(235, 235, 235);
+    @include flexcenter();
+    padding: 6px;
+    float: right;
+    margin: 15px 20px 0px 0px;
+
+    &::placeholder {
+        font-size: 16px;
+    }
+}
+    .onup {
+        @include flex(row);
+        height: 270px;
+        width: auto;
+
+        div {
+            border: 3px solid $blue;
+            margin: 80px 20px 0px 20px;
+            width: 400px;
+            div {
+                @include flex(row);
+                @include flexcenter();
+                margin-top: 10px;
+                border: none;
+    
+                p {
+                    font-size: 19px;
+                    margin-right: 20px;
+                }
+            }
+    
+            p {
+                font-size: 17px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .goal {
+        @include flex(row);
+        margin-left: 20px;
+
+        button {
+            border-radius: 5px;
+            padding: 7px 12px;
+            font-size: 16px;
+        }
+
+        input {
+            margin-left: 770px;
+            height: 35px;
+            width: 170px;
+            padding: 6px;
+            font-size: 15px;
+        }
+    }
+
+    .goal1 {
+        @include flex(row);
+        margin-left: 20px;
+    
+        button {
+            border: none;
+            background-color: transparent;
+            font-size: 19px;
+            color: gray;
+            padding: 8px 17px;
+            border-radius: 5px;
+        }
+    }
+    
+    .icon {
+        margin-left: 900px
+    }
+
+    .mar3 {
+        font-weight: 600;
+        font-size: 25px
+    }
+
+    .date {
+        @include flex(row);
+        border: 1px solid white;
+        padding-left: 20px;
+
+        p {
+            float: right;
+            color: $purple;
+            margin-right: 4px;
+        }
+    }
+
+    .bar {
+        @include flex(row);
+        margin-left: 40px;
+
+        p {
+            margin-right: 360px;
+            font-size: 15px;
+            color: gray;
+        }
+    }
+
+    .table1 {
+        div {
+            width: 370px;
+        }
+    }
+
+    .table2 {
+        div {
+            width: 370px;
+        }
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+
+    .onup {
+        @include flex(column);
+        height: 750px;
+        margin-left: 150px;
+        margin-right: 100px;
+
+        div {
+            div {
+                p {
+                    padding-bottom: 0px;
+                    font-size: 120%;
+                }
+            }
+
+            p {
+                padding-bottom: 70px;
+                font-size: 18px;
+            }
+        }
+    }
+    .mar3 {
+        font-weight: 600;
+        font-size: 25px;
+        background: transparent;
+        border: 1px solid white;
+        color: $purple;
+    }
+    .topnav {
+        height: 60px;
+        width: 100%;
+
+        img {
+            width: 450px;
+        }
+
+        div {
+
+            img {
+                height: 55px;
+                width: auto;
+                border-radius: 50%;
+                margin-right: 20px;
+                margin-left: 5px;
+                margin-top: 5px;
+            }
+            
+            p {
+                font-size: 20px;
+            }
+    
+
+        }
+    }
+
+    .goal {
+        @include flex(row);
+        margin-left: 20px;
+
+        button {
+            padding: 8px 12px;
+            font-size: 18px;
+        }
+
+        input {
+            margin-left: 300px;
+            font-size: 17px;
+        }
+    }
+
+    .goal1 {
+        @include flex(row);
+        margin-left: 20px;
+
+        button {
+            font-size: 17px;
+            padding: 9px 19px;
+        }
+    }
+
+    .icon {
+        margin-left: 400px
+    }
+
+    .table2 {
+        div {
+            width: 150px;
+        }
+    }
+
+    .bar {
+        margin-left: 30px;
+
+        p {
+            margin-right: 110px;
+            font-size: 16px;
+        }
+
+        div {
+            width: 170px
+        }
+    }
+
+    .main_bar {
+        @include progress(11px);
+        margin-top: 10px;
+    }
+
+    .table1 {
+        div {
+            width: 150px;
+        }
+    }
+
+}
